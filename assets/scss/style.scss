@@ -1,0 +1,18 @@
+@use "../../libs/normalize-scss/sass/normalize/import-now";
+
+@use "common/typography";
+@use "common/classes";
+@use "header/header";
+@use "header/header-logo";
+@use "header/header-menu";
+
+@use "main/main-breadcrumb";
+@use "main/main-content-item";
+@use "main/main-content";
+@use "main/main";
+
+@use "aside/aside";
+@use "aside/left";
+@use "aside/right";
+
+@use "footer";

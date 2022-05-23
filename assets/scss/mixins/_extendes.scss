@@ -1,0 +1,17 @@
+@use "../presets/" as *;
+
+%overlay {
+  background-color: $color-dark;
+  opacity: 0.5;
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+}
+
+%h3-title {
+  margin-top: calc($gap-sm * 0.5);
+  padding-bottom: $gap-sm;
+  border-bottom: 1px solid #333333;
+  margin-bottom: calc($gap-sm * 1.5);
+}

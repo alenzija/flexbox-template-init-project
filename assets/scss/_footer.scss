@@ -1,0 +1,49 @@
+@use "mixins/" as *;
+@use "presets/" as *;
+
+.footer {
+  padding: 15px;
+  &-list {
+    max-width: $ul;
+    margin: auto;
+    display: grid;
+    gap: $gap-sm;
+    grid-template-areas: "f1 f2 f3 f4" "f5 f5 f5 f5";
+
+    @media (max-width: $md) {
+      grid-template-areas: "f1 f2" "f3 f4" "f5 f5";
+    }
+
+    @media (max-width: $xs) {
+      grid-template-areas: "f1" "f2" "f3" "f4" "f5";
+    }
+  }
+  &-item {
+    position: relative;
+    height: min-content;
+    padding: 15px 10px;
+
+    &--accent {
+      text-align: center;
+    }
+
+    &__overlay {
+      @extend %overlay;
+    }
+
+    &__title {
+      @extend %h3-title;
+    }
+
+    &__text {
+      line-height: 2em;
+      color: #cccccc;
+    }
+
+    @for $i from 1 to 6 {
+      &:nth-of-type(#{$i}) {
+        grid-area: f#{$i};
+      }
+    }
+  }
+}

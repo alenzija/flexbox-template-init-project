@@ -1,0 +1,32 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+
+.header {
+  &-container {
+    width: calc(100% - $gap-lg);
+    min-height: calc($gap-x5 * 3.3);
+    max-width: $ul;
+    padding: $gap-x2 $gap;
+    margin: auto;
+    position: relative;
+    text-align: center;
+
+    &__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: $color-dark;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+
+  &-title {
+    margin-top: $gap-x2;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  &-description {
+    margin-top: $gap-lg;
+    text-align: center;
+  }
+}

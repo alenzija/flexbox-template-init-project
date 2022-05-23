@@ -1,0 +1,18 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+
+.main {
+  max-width: 840px;
+  &-container {
+    padding: 15px;
+    margin: auto;
+    position: relative;
+  }
+
+  @media (max-width: $lg) {
+    max-width: calc(100% - $left-sidebar-width);
+  }
+  @media (max-width: $md) {
+    max-width: 100%;
+  }
+}

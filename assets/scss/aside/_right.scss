@@ -1,0 +1,88 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+.right {
+  width: $right-sidebar-width;
+
+  &-item {
+    min-height: calc($gap-x5 * 1.2);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px 0;
+    &__title {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &__img {
+      margin-top: $gap-sm;
+      margin-left: 5px;
+      width: 75px;
+      height: 75px;
+      overflow: hidden;
+    }
+    &__image {
+      transition: 0.5s;
+    }
+    &__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4; // количество строк
+      -webkit-box-orient: vertical;
+      margin-top: 17px;
+      padding-left: 10px;
+      max-height: 70px;
+      width: calc(100% - $gap-x4);
+      text-overflow: ellipsis;
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+    &__link {
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    &__overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transition: 0.5s;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba($color-dark, 0.5) 35%,
+        rgba($color-dark, 0.5) 65%,
+        transparent 100%
+      );
+    }
+    &:hover {
+      .right-item__overlay {
+        display: block;
+      }
+      .right-item__image {
+        transform: scale(1.1);
+      }
+      .right-item__title {
+        color: $color-accent;
+      }
+      .right-item__text {
+        color: $color-light;
+      }
+    }
+  }
+
+  @media (max-width: $lg) {
+    width: 100%;
+  }
+  @media (max-width: $md) {
+    width: calc(50% - 5px);
+  }
+  @media (max-width: $xs) {
+    width: 100%;
+  }
+}

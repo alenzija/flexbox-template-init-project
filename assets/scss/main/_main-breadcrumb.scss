@@ -1,0 +1,28 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+
+.main-breadcrumb {
+  position: relative;
+  padding: $gap-sm $gap;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  &__link {
+    display: block;
+    letter-spacing: 2px;
+  }
+  &__link--active {
+    font-weight: bold;
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to left,
+      rgba($color-dark, 0.8) 0%,
+      rgba($color-light, 0) 100%
+    );
+    border-radius: 5px;
+    z-index: -1;
+  }
+}

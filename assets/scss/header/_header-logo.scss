@@ -1,0 +1,14 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+
+.logo {
+  position: relative;
+  &-link {
+    display: block;
+    position: absolute;
+    inset: 0 calc(50% - $gap-x5 * 2);
+  }
+  &-img {
+    max-width: calc($gap-x5 * 4);
+  }
+}

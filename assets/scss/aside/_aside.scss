@@ -1,0 +1,25 @@
+@use "../mixins/" as *;
+@use "../presets/" as *;
+
+.aside {
+  &-container {
+    &-left {
+      position: relative;
+      margin: auto;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    &-right {
+      position: relative;
+      margin: auto;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    &__overlay {
+      @extend %overlay;
+    }
+  }
+  &-title {
+    @extend %h3-title;
+  }
+}

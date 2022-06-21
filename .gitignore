@@ -4,3 +4,6 @@ temp/
 # IntellijIdea files
 .idea/
 */scss-comb/
+node-modules/
+samples/
+package-lock.json
